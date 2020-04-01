@@ -1,0 +1,11 @@
+--- Marlin-2.0.5.3_orig/platformio.ini	2020-03-31 12:44:14.000000000 -0700
++++ Marlin-2.0.5.3/platformio.ini	2020-03-31 14:03:03.000000000 -0700
+@@ -18,7 +18,7 @@
+ [platformio]
+ src_dir      = Marlin
+ boards_dir   = buildroot/share/PlatformIO/boards
+-default_envs = mega2560
++default_envs = LPC1769
+ 
+ [common]
+ default_src_filter = +<src/*> -<src/config> -<src/HAL> +<src/HAL/shared>
