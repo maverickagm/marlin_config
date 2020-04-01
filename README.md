@@ -129,7 +129,7 @@ Disable auto bed leveling:
 //#define AUTO_SAVE_LOAD_LEVELING_VALUE
 
 Manual Bed leveling points (30mm from each edge):
-
+```
 #define LEVELING_POINT_1_X         (X_MIN_POS + 30)
 #define LEVELING_POINT_1_Y         (Y_MIN_POS + 30)
 #define LEVELING_POINT_2_X         (X_MAX_POS - 30)
@@ -138,3 +138,4 @@ Manual Bed leveling points (30mm from each edge):
 #define LEVELING_POINT_3_Y         (Y_MAX_POS - 30)
 #define LEVELING_POINT_4_X         (X_MIN_POS + 30)
 #define LEVELING_POINT_4_Y         (Y_MAX_POS - 30)
+```
