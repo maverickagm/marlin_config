@@ -1,0 +1,113 @@
+--- BIGTREETECH-TouchScreenFirmware-Vx.x.27/TFT/src/User/Configuration.h	2023-01-11 15:27:06.564049810 -0800
++++ BIGTREETECH-TouchScreenFirmware-Vx.x.27_orig/TFT/src/User/Configuration.h	2023-01-09 20:52:52.063476476 -0800
+@@ -34,7 +34,7 @@
+  *
+  * Options: [2400: 0, 9600: 1, 19200: 2, 38400: 3, 57600: 4, 115200: 5, 250000: 6, 500000: 7, 1000000: 8]
+  */
+-#define BAUDRATE 6  // Default: 5
++#define BAUDRATE 5  // Default: 5
+ 
+ /**
+  * Default Primary Language (for Touch-Mode only)
+@@ -93,7 +93,7 @@
+  *          12: DARKBLUE,  13: DARKGREEN,  14: GRAY,    15: DARKGRAY
+  */
+ #define MARLIN_BKCOLOR 1  // Default: 1
+-#define MARLIN_FNCOLOR 3  // Default: 0
++#define MARLIN_FNCOLOR 0  // Default: 0
+ 
+ // Text displayed at the top of the TFT in Marlin Mode
+ #define MARLIN_BANNER_TEXT "Marlin Mode"  // Default: "Marlin Mode"
+@@ -107,7 +107,7 @@
+  * Options: 0: Disabled (RECOMMENDED FOR TFT24)
+  *          1: Enabled
+  */
+-#define MARLIN_MODE_FULLSCREEN 1  // Default: 0
++#define MARLIN_MODE_FULLSCREEN 0  // Default: 0
+ 
+ /**
+  * Keep Serial always On (ONLY SUPPORTED ON TFT24 V1.1, TFT35 V3.0, AND TFT28 V3.0)
+@@ -117,7 +117,7 @@
+  *
+  * Options: [0: Disabled, 1: Enabled]
+  */
+-#define SERIAL_ALWAYS_ON 1  // Default: 0
++#define SERIAL_ALWAYS_ON 0  // Default: 0
+ 
+ /**
+  * LCD/Touch Encoder
+@@ -138,10 +138,10 @@
+                            // of the number of extruders)
+ 
+ #define PREHEAT_LABELS   {"PLA", "PETG", "ABS", "WOOD", "TPU", "NYLON"}
+-#define PREHEAT_HOTEND   {205,   235,    230,   170,    220,   250}
+-#define PREHEAT_BED      {60,    80,     90,    50,     50,    90}
++#define PREHEAT_HOTEND   {200,   240,    230,   170,    220,   250}
++#define PREHEAT_BED      {60,    70,     90,    50,     50,    90}
+ 
+-#define HEAT_MAX_TEMP    {310,       275,       275,       275,       275,       275,       120,    60}
++#define HEAT_MAX_TEMP    {275,       275,       275,       275,       275,       275,       150,    60}
+ #define HEAT_SIGN_ID     {"T0:",     "T1:",     "T2:",     "T3:",     "T4:",     "T5:",     "B:",   "C:"}
+ #define HEAT_DISPLAY_ID  {"T0",      "T1",      "T2",      "T3",      "T4",      "T5",      "Bed",  "Chamber"}
+ #define HEAT_CMD         {"M104 T0", "M104 T1", "M104 T2", "M104 T3", "M104 T4", "M104 T5", "M140", "M141"};
+@@ -190,9 +190,9 @@
+ #define X_MIN_POS   0
+ #define Y_MIN_POS   0
+ #define Z_MIN_POS   0
+-#define X_MAX_POS 325
+-#define Y_MAX_POS 325
+-#define Z_MAX_POS 415
++#define X_MAX_POS 235
++#define Y_MAX_POS 235
++#define Z_MAX_POS 250
+ 
+ /**
+  * Raised Z height for probing
+@@ -216,9 +216,9 @@
+  * Manual Leveling
+  * Move to four corner points to Leveling manually (Point 1, Point 2, Point 3, Point 4).
+  */
+-#define LEVELING_EDGE_DISTANCE        40  // Inset distance from bed's edge for calculating leveling point location
++#define LEVELING_EDGE_DISTANCE        20  // Inset distance from bed's edge for calculating leveling point location
+ #define LEVELING_POINT_Z            0.2f  // Z-axis position when nozzle stays for leveling
+-#define LEVELING_POINT_MOVE_Z       8.0f  // Z-axis position when nozzle move to next point
++#define LEVELING_POINT_MOVE_Z      10.0f  // Z-axis position when nozzle move to next point
+ #define LEVELING_POINT_XY_FEEDRATE  6000  // (mm/min) X and Y axes move feedrate
+ #define LEVELING_POINT_Z_FEEDRATE    600  // (mm/min) Z axis move feedrate
+ 
+@@ -292,7 +292,7 @@
+  *
+  * Options: [0: Disabled, 1: Enabled]
+  */
+-#define AUTO_SAVE_LOAD_BL_VALUE 0  // Default: 1
++#define AUTO_SAVE_LOAD_BL_VALUE 1  // Default: 1
+ 
+ // PID autotune
+ #define PID_CMD {"M303 U1 C8 E0", "M303 U1 C8 E1", "M303 U1 C8 E2", "M303 U1 C8 E3", "M303 U1 C8 E4", "M303 U1 C8 E5", "M303 U1 C8 E-1", ""};
+@@ -356,7 +356,7 @@
+  *          3: LED_ORANGE,  4: LED_YELLOW,  5: LED_GREEN,
+  *          6: LED_BLUE,    7: LED_INDIGO,  8: LED_VIOLET
+ */
+-#define STARTUP_KNOB_LED_COLOR 0  // Default: 1
++#define STARTUP_KNOB_LED_COLOR 1  // Default: 1
+ 
+ // Keep the LED state in Marlin Mode
+ #define KEEP_KNOB_LED_COLOR_MARLIN_MODE
+@@ -369,7 +369,7 @@
+  *          6: 50 Percent,   7: 60 Percent,   8: 70 Percent,
+  *          9: 80 Percent,  10: 90 Percent,  11: 100 Percent
+  */
+-#define DEFAULT_LCD_BRIGHTNESS        9  // Default: 11
++#define DEFAULT_LCD_BRIGHTNESS       11  // Default: 11
+ #define DEFAULT_LCD_IDLE_BRIGHTNESS   3  // Default: 3
+ 
+ /**
+@@ -381,7 +381,7 @@
+  *          3: 30 Seconds,   4: 60 Seconds,     5: 120 Seconds,
+  *          6: 300 Seconds,  7: CUSTOM Seconds
+  */
+-#define DEFAULT_LCD_IDLE_TIMER  6  // Default: 0
++#define DEFAULT_LCD_IDLE_TIMER  0  // Default: 0
+ #define LCD_DIM_CUSTOM_SECONDS (10 * 60)  // Custom value in seconds. This will be used if DEFAULT_LCD_IDLE_TIMER
+                                           // is set to 7 (CUSTOM Seconds).
+ 
